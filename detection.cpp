@@ -53,16 +53,16 @@ int main(void)
 	struct timeval tv1,tv2;
 	long long T;
 	string classesFile = "./yolo/coco.names";
-    string modelConfig = "./yolo/yolov4.cfg";
-    string modelWeights = "./yolo/yolov4.weights";
+	string modelConfig = "./yolo/yolov4.cfg";
+	string modelWeights = "./yolo/yolov4.weights";
 
-    //加载类别名
-    vector<string> classes;
+	//加载类别名
+	vector<string> classes;
 	ifstream ifs(classesFile.c_str());
 	string line;
 	while (getline(ifs, line)) classes.push_back(line);
 	//加载网络模型，0是指定第一块GPU
-    Detector detector(modelConfig, modelWeights, 0);
+	Detector detector(modelConfig, modelWeights, 0);
 
 	string mode = "video";
 	//图像
